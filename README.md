@@ -156,10 +156,10 @@ python producer.py
 ### Expected Results Flow
 
 ```
-Producer → Queue → Consumer → ML Processing → Results Queue → Viewer
+RAW DATA (SPLITING INTO 1 ROW) -> Producer → Queue → Consumer(Feature Engineering, Preprocessing, Machine Learning model) → Results Queue → Viewer
 
-tx_1: $150.00 → Feature Engineering → Model Prediction → 85% fraud → 🚨 FRAUD DETECTED
-tx_2: $25.99  → Feature Engineering → Model Prediction → 12% fraud → ✅ LEGITIMATE
+tx_1: → Feature Engineering → Model Prediction → 85% fraud → 🚨 FRAUD DETECTED
+tx_2: → Feature Engineering → Model Prediction → 12% fraud → ✅ LEGITIMATE
 ```
 
 ### Use Real Fraud Cases
@@ -172,9 +172,21 @@ SAMPLE_DATA_CSV = "../new_applications.csv"
 ### Expected Output with Real Fraud
 
 ```
-🚨 FRAUD DETECTED | Transaction tx_1 | Amount: $873.45 | Probability: 0.892
-🚨 FRAUD DETECTED | Transaction tx_2 | Amount: $156.78 | Probability: 0.743
-✅ LEGITIMATE | Transaction tx_3 | Amount: $25.99 | Probability: 0.123
+============================================================
+🔍 FRAUD DETECTION RESULT
+============================================================
+Transaction ID: tx_6
+✅ STATUS: LEGITIMATE TRANSACTION
+🎯 Fraud Risk: 0.0%
+============================================================
+
+============================================================
+🔍 FRAUD DETECTION RESULT
+============================================================
+Transaction ID: tx_4
+🚨 STATUS: FRAUD DETECTED
+🎯 Confidence: 92.6%
+============================================================
 ```
 
 ### Application Logs
