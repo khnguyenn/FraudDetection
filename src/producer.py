@@ -15,7 +15,7 @@ RABBITMQ_PORT = 5672
 RABBITMQ_QUEUE = "fraud_detection_queue"
 
 # Sample data CSV file
-SAMPLE_DATA_CSV = "../new_applications.csv"
+SAMPLE_DATA_CSV = "../data/new_applications.csv"
 
 def create_queue(channel, queue_name):
     """Create queue if not exists"""

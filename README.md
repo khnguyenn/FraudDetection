@@ -5,15 +5,12 @@ A production-ready fraud detection pipeline using RabbitMQ, machine learning, an
 ## 📋 Table of Contents
 
 - [Files Structure](#-files-structure)
-- [System Architecture](#-system-architecture)
-- [Prerequisites](#-prerequisites)
+- [System Architecture](#system-architecture)
 - [Installation](#-installation)
 - [Running the System](#-running-the-system)
-- [Data Flow](#-data-flow)
-- [Model Information](#-model-information)
-- [Testing with Real Fraud Cases](#-testing-with-real-fraud-cases)
-- [Monitoring](#-monitoring)
-- [Troubleshooting](#-troubleshooting)
+- [Expected Results Flow](#expected-results-flow)
+- [Use Real Fraud Cases](#use-real-fraud-cases)
+- [Application Logs](#application-logs)
 
 ## 📁 Files Structure
 
@@ -26,11 +23,14 @@ FraudDetection/
 ├── artifacts/
 │   ├── model.joblib          # Trained ML model
 │   └── preprocessor.joblib   # Data preprocessing pipeline
+├── data/
+│   └── new_applications.csv  # Sample transaction data
+├── notebook_and_ppt/
+│   └── models.ipynb          # Model training notebook
 ├── submissions/
-│   └──  *.csv                 # Model predictions
+│   └── *.csv                 # Model predictions
 ├── image/
-│   └── system_architecture.png
-├── new_applications.csv      # Sample transaction data
+│   └── system_architecture.jpg
 ├── requirements.txt          # Python dependencies
 ├── docker-compose.yml        # RabbitMQ infrastructure
 └── README.md
@@ -165,7 +165,7 @@ tx_2: → Feature Engineering → Model Prediction → 12% fraud → ✅ LEGITIM
 ### Use Real Fraud Cases
 
 ```bash
-SAMPLE_DATA_CSV = "../new_applications.csv"
+SAMPLE_DATA_CSV = "../data/new_applications.csv"
 # Change the data file u want in producer.py
 ```
 
